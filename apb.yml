@@ -16,13 +16,21 @@ plans:
     default: True
     metadata:
       displayName: Ephemeral
-    parameters: []
+    parameters:
+      - name: external_ip
+        type: string
+        title: External IP of infrastructure node (region=infra, virtual IP)
+        required: true
   - name: Persistent
     description: Deploy UniFi Controller with persistent storage
     free: True
     metadata:
       displayName: Persistent
     parameters:
+      - name: external_ip
+        type: string
+        title: External IP of infrastructure node (region=infra, virtual IP)
+        required: true
       - name: unifi_controller_volume_size
         type: enum
         default: '1Gi'
